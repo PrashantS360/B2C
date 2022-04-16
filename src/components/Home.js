@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-// import {F4} from './F4';
+import React from 'react';
 import SliderItems from './SliderItems';
 import Review from './Review';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,6 @@ const Home = () => {
   return (
     <div className="flex justify-center my-24 md:my-16">
       <div className='max-w-[1700px]'>
-        {/* <F4/> */}
         <div className="categories px-1.5 flex justify-evenly py-2 space-x-3 shadow-gray-400  mb-5 shadow-sm pr-2 ">
           <Link to={`/filter/mobiles`} className="cursor-pointer items hidden sm:flex flex-col justify-center items-center"><span className=' hover:text-[#7520f5] font-bold'>Mobiles</span></Link>
           <Link to={`/filter/car`} className="cursor-pointer items flex flex-col justify-center items-center"><span className=' hover:text-[#7520f5] font-bold'>Car</span></Link>
