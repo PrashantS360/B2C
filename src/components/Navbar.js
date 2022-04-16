@@ -37,14 +37,19 @@ const Navbar = () => {
         history.push('/');
         window.location.reload();
     }
-
+    
     const onChange = (e) => {
         setSearchVal(e.target.value)
     }
-
+    
     const handleSearch = (e) => {
+        // if(location.pathname.substring(0,7)==='/search'){
+        //     location.pathname = '/search/'+searchVal.toString()
+        //     history.push('/search/'+searchVal.toString())
+        //     // window.location.reload();
+        // }
+        // alert('reload '+searchVal)
         setSearchVal("");
-        location.reload();
     }
 
 
