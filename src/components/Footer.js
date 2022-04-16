@@ -39,7 +39,7 @@ const Footer = () => {
                 <div className="flex justify-evenly space-x-8 border-gray-500 border-l-[1px] pl-8">
                     <div className="flex flex-col space-y-1 text-white">
                         <span className="text-gray-300 my-1 text-sm">Mail Us:</span>
-                        <p className='text-[0.8rem]'>B2C Internet Private Limited, </p>
+                        <p className='text-[0.8rem]'>BKB Internet Private Limited, </p>
                         <p className='text-[0.8rem]'> Buildings Alyssa, Begonia &amp; </p>
                         <p className='text-[0.8rem]'> Clove Embassy Tech Village, </p>
                         <p className='text-[0.8rem]'> Outer Ring Road, Devarabeesanahalli Village, </p>
@@ -48,7 +48,7 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col space-y-1 text-white">
                         <span className="text-gray-300 my-1 text-sm">Registered Office Address:</span>
-                        <p className='text-[0.8rem]'>B2C Internet Private Limited, </p>
+                        <p className='text-[0.8rem]'>BKB Internet Private Limited, </p>
                         <p className='text-[0.8rem]'> Buildings Alyssa, Begonia &amp; </p>
                         <p className='text-[0.8rem]'> Clove Embassy Tech Village, </p>
                         <p className='text-[0.8rem]'> Outer Ring Road, Devarabeesanahalli Village, </p>
@@ -61,13 +61,13 @@ const Footer = () => {
             </div>
             <div className='flex py-4 px-8 items-center justify-between'>
                 <div className='flex justify-evenly space-x-5'>
-                    <span className='text-[0.9rem]'><i className="fas fa-box mr-2 text-yellow-400"></i>Sell on Flipkart</span>
+                    <span className='text-[0.9rem]'><i className="fas fa-box mr-2 text-yellow-400"></i>Sell on BKB</span>
                     <span className='text-[0.9rem]'><i className="fas fa-star mr-2 text-yellow-400"></i>Advertise</span>
                     <span className='text-[0.9rem]'><i className="fas fa-gift mr-2 text-yellow-400"></i>Gift Cards</span>
                     <span className='text-[0.9rem]'><i className="fas fa-question-circle mr-2 text-yellow-400"></i>Help Center</span>
                 </div>
                 <div className='text-[0.95rem]'>
-                    &copy; 2022-2032 b2c.com
+                    &copy; 2022-2032 BKB.com
                 </div>
             </div>
         </div>

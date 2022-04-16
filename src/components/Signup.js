@@ -51,7 +51,7 @@ const Signup = () => {
                     <input className=' px-1 py-2 border-b-[1.5px] focus:border-[#2874f0] outline-none' type="phone" name="phone" id="phone" placeholder='Enter Mobile Number ' onChange={onChange} value={credentials.phone} />
                     <input className=' px-1 py-2 border-b-[1.5px] focus:border-[#2874f0] outline-none' type="password" name="password" autoComplete='current-password' id="password" placeholder='Enter Password' onChange={onChange} value={credentials.password} />
                     <input className=' px-1 py-2 border-b-[1.5px] focus:border-[#2874f0] outline-none' type="text" name="cpassword" id="cpassword" placeholder='Confirm Your Password' onChange={onChange} value={credentials.cpassword} />
-                    <p className='text-xs text-muted'>By continuing, you agree to Flipkart's <span className='text-util text-xs'>Terms of Use</span>  and <span className='text-util text-xs'>Privacy Policy</span>.</p>
+                    <p className='text-xs text-muted'>By continuing, you agree to BKB's <span className='text-util text-xs'>Terms of Use</span>  and <span className='text-util text-xs'>Privacy Policy</span>.</p>
 
                     <button className='my-2 text-white bg-[#fb641b] font-semibold py-2'>Continue</button>
 

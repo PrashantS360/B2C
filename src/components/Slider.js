@@ -1,8 +1,8 @@
 import React from 'react';
-import Image1 from '../assets/slider1.jpg';
-import Image2 from '../assets/slider2.jpg';
-import Image3 from '../assets/slider3.jpg';
-import Image4 from '../assets/slider4.jpg';
+import Image1 from '../assets/logo.png';
+import Image2 from '../assets/img1.png';
+import Image3 from '../assets/img2.png';
+import Image4 from '../assets/img3.png';
 
 const Slider = () => {
   let slideIndex = 0;
@@ -49,16 +49,16 @@ const Slider = () => {
 
         {/* <!-- Full-width images with number and caption text --> */}
         <div className="mySlides w-full fade ">
-          <img src={Image1} className='w-full' alt='' />
+          <img src={Image1} className='w-full sm:h-[70vh] h-[50vh] ' alt='' />
         </div>
         <div className="mySlides w-full fade hidden">
-          <img src={Image2} className='w-full' alt='' />
+          <img src={Image2} className='w-full sm:h-[70vh] h-[50vh] ' alt='' />
         </div>
         <div className="mySlides w-full fade hidden">
-          <img src={Image3} className='w-full' alt='' />
+          <img src={Image3} className='w-full sm:h-[70vh] h-[50vh] ' alt='' />
         </div>
         <div className="mySlides w-full fade hidden">
-          <img src={Image4} className='w-full' alt='' />
+          <img src={Image4} className='w-full sm:h-[70vh] h-[50vh] ' alt='' />
         </div>
 
         {/* <!-- Next and previous buttons --> */}

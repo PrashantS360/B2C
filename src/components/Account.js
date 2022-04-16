@@ -111,16 +111,16 @@ const Account = () => {
                             <p className='text-sm mb-6'>Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).</p>
                         </div>
                         <div className='my-3'>
-                            <h3 className='font-semibold text-sm my-2'>When will my B2C account be updated with the new email address (or mobile number)?</h3>
+                            <h3 className='font-semibold text-sm my-2'>When will my BKB account be updated with the new email address (or mobile number)?</h3>
                             <p className='text-sm mb-6'>It happens as soon as you confirm the verification code sent to your email (or mobile) and save the changes.</p>
                         </div>
                         <div className='my-3'>
-                            <h3 className='font-semibold text-sm my-2'>What happens to my existing B2C account when I update my email address (or mobile number)?</h3>
+                            <h3 className='font-semibold text-sm my-2'>What happens to my existing BKB account when I update my email address (or mobile number)?</h3>
                             <p className='text-sm mb-6'>Updating your email address (or mobile number) doesn't invalidate your account. Your account remains fully functional. You'll continue seeing your Order history, saved information and personal details.</p>
                         </div>
                         <div className='my-3'>
                             <h3 className='font-semibold text-sm my-2'>Does my Seller account get affected when I update my email address?</h3>
-                            <p className='text-sm mb-6'>B2C has a 'single sign-on' policy. Any changes will reflect in your Seller account also.</p>
+                            <p className='text-sm mb-6'>BKB has a 'single sign-on' policy. Any changes will reflect in your Seller account also.</p>
                         </div>
                     </div>
 

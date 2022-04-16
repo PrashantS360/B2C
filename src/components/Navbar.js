@@ -128,7 +128,7 @@ const Navbar = () => {
                         <div className='flex rounded-md mx-1'>
                             <Link to='/login' className='bg-white  text-util font-bold border-[3px] border-[#7520f5] md:hidden flex rounded-md px-3 pr-4 items-center text-sm py-1'><BiAddToQueue className='mx-1' />Sell</Link>
                             {admin && <Link to='/admin' className='bg-white  text-util font-bold border-[3px] border-[#7520f5] md:hidden flex rounded-md px-3 pr-4 items-center text-sm py-1'>Admin</Link>}
-                            {admin!==null && admin==false && <Link to='/servicing' className='bg-white  text-util font-bold border-[3px] border-[#7520f5] md:hidden flex rounded-md px-3 pr-4 items-center text-sm py-1'>Servicing</Link>}
+                            {admin!==null && admin===false && <Link to='/servicing' className='bg-white  text-util font-bold border-[3px] border-[#7520f5] md:hidden flex rounded-md px-3 pr-4 items-center text-sm py-1'>Service</Link>}
                         </div>
                     </span>
                     <div className='border-[3px] hidden md:flex border-gray-300 mx-1 rounded-md'>
@@ -138,8 +138,8 @@ const Navbar = () => {
                         {admin &&
                             <Link to='/admin' className='bg-white text-util font-bold border-[3px] border-[#7520f5]  flex rounded-md px-3 pr-4 items-center '>Admin</Link>}
 
-                        {admin!==null && admin==false &&
-                            <Link to='/servicing' className='bg-white text-util font-bold border-[3px] border-[#7520f5]  flex rounded-md px-3 pr-4 items-center '>Servicing</Link>}
+                        {admin!==null && admin===false &&
+                            <Link to='/servicing' className='bg-white text-util font-bold border-[3px] border-[#7520f5]  flex rounded-md px-3 pr-4 items-center '>Service</Link>}
                     </div>
                 </div>
             </nav>

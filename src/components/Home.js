@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import SliderItems from './SliderItems';
 import Review from './Review';
 import { Link } from 'react-router-dom';
+import Slider from './Slider';
 
-const Home = () => { 
+const Home = () => {
   return (
     <div className="flex justify-center my-24 md:my-16">
       <div className='max-w-[1700px]'>
@@ -20,6 +21,7 @@ const Home = () => {
           <Link to={`/filter/home`} className="cursor-pointer items flex flex-col justify-center items-center"><span className=' hover:text-[#7520f5] font-bold'>Home</span></Link>
         </div>
 
+        <Slider />
         <SliderItems category="car" sliderNo={1} recmd={true} title="More On Cars" />
         <SliderItems category="mobiles" sliderNo={2} recmd={true} title="Deals On Mobiles" />
         <SliderItems category="laptop" sliderNo={3} title="Suggested for You" />
