@@ -1,12 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Items from './Items';
 
 const SliderItems = (props) => {
-    const { sliderNo, recmd, items, title, category } = props;
+    const [items, setItems] = useState([]);
+    const { sliderNo, recmd, title, category } = props;
+
     let slideIndex = 0;
     let oneSlideItems = 4;
+
+    const getItem = async () => {
+        let response = await fetch(`http://localhost:8000/api/auth/getproducts/${category}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        let json = await response.json();
+        setItems(json);
+
+    }
 
     // Next/previous controls
     function plusSlides(n) {
@@ -14,18 +29,18 @@ const SliderItems = (props) => {
     }
 
     function showSlides(n) {
-        let items = document.getElementsByClassName(`itemContainer${sliderNo}`)[0].childNodes;
+        let item = document.getElementsByClassName(`itemContainer${sliderNo}`)[0].childNodes;
         let slides = Math.ceil(items.length / oneSlideItems);
         // let slides = 0;
+        console.log(item.length);
 
-        // console.log(slides);
         slideIndex = (n + slides) % slides;
         for (let i = 0; i < items.length; i++) {
-            items[i].style.display = 'none';
+            item[i].style.display = 'none';
         }
-
+        console.log(slides, slideIndex);
         for (let j = slideIndex * oneSlideItems; j < Math.min(slideIndex * oneSlideItems + oneSlideItems, items.length); j++) {
-            items[j].style.display = 'block';
+            item[j].style.display = 'block';
         }
 
         if (slideIndex === 0) {
@@ -45,15 +60,17 @@ const SliderItems = (props) => {
     }
 
     useEffect(() => {
+        getItem();
         if (window.screen.width >= 768) {
-            showSlides(slideIndex);
+            // showSlides(0);
         }
+
         // plusSlides(1);
         // plusSlides(-1);
 
         // eslint-disable-next-line
     }, []);
-
+    console.log(items);
 
 
 

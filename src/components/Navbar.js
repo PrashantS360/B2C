@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import { HiOutlineLogin } from "react-icons/hi";
 import { useLocation } from 'react-router-dom';
+import { FcBusinessContact } from 'react-icons/fc'
 import { BiAddToQueue } from 'react-icons/bi'
 
 const Navbar = () => {
@@ -41,7 +42,7 @@ const Navbar = () => {
         setSearchVal(e.target.value)
     }
 
-    const handleSearch = (e)=>{
+    const handleSearch = (e) => {
         setSearchVal("");
         location.reload();
     }
@@ -105,7 +106,7 @@ const Navbar = () => {
             </nav>
 
             <div className='bg-util md:hidden flex justify-center items-center -mt-1'>
-            <Link to={`/search/${searchVal.toString()}`} onClick={handleSearch}><i className="fas fa-search bg-none translate-x-7 cursor-pointer text-util "></i></Link>
+                <Link to={`/search/${searchVal.toString()}`} onClick={handleSearch}><i className="fas fa-search bg-none translate-x-7 cursor-pointer text-util "></i></Link>
                 <input type="search" name="search" id="search" placeholder='Search for products, brands and more' className='text-sm px-9 py-2 w-full my-1 mr-3.5 rounded-sm ' onChange={onChange} value={searchVal} />
             </div>
 
@@ -118,6 +119,7 @@ const Navbar = () => {
                 <div className="items flex flex-col py-2" onClick={onClick}>
                     <Link to="/account" className='py-2 '><i className="fas fa-user-tie mx-2"></i>My Profile</Link>
                     <Link to="/orders" className='py-2 '><i className="fas fa-folder mx-2"></i>My Orders</Link>
+                    <Link to="/contact" className='py-2 '><FcBusinessContact className='mr-2' />Contact Us</Link>
                     <Link to="/" className='py-2' onClick={loggedIn}><i className="fas fa-power-off mx-2"></i>Logout</Link>
                 </div>
             </div>}

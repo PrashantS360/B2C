@@ -59,7 +59,7 @@ const Product = () => {
 
     const order = async () => {
         let item = itemDetails;
-        // console.log(item);
+        console.log(item);
         const response = await fetch(`http://localhost:8000/api/auth/order`, {
             method: "POST",
             headers: {
