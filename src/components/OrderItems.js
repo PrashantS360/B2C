@@ -19,8 +19,8 @@ const OrderItems = ({ orderDetails }) => {
                     <div className="deliverDate mx-1 sm:w-1/3">
                         <div className='flex items-center'>
                             <span className='w-2.5 h-2.5 mt-0.5 rounded-full mr-1 bg-green-600'> </span>
-                            {delivered && <p className='text-sm my-1 font-semibold'> Deliver on {date.toString().substr(0,10)}</p>}
-                            {!delivered && <p className='text-sm my-1 font-semibold'> Delivered on {date.toString().substr(0,10)}</p>}
+                            {!delivered && <p className='text-sm my-1 font-semibold'> Delivery expected on {date.toString().substr(0,10)}</p>}
+                            {delivered && <p className='text-sm my-1 font-semibold'> Delivered on {date.toString().substr(0,10)}</p>}
                         </div>
                         {delivered && <p className='text-xs my-1'>Your item has been delivered</p>}
                         {!delivered && <p className='text-xs my-1'>Your item is on the way</p>}

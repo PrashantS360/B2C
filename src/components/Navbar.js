@@ -37,11 +37,11 @@ const Navbar = () => {
         history.push('/');
         window.location.reload();
     }
-    
+
     const onChange = (e) => {
         setSearchVal(e.target.value)
     }
-    
+
     const handleSearch = (e) => {
         // if(location.pathname.substring(0,7)==='/search'){
         //     location.pathname = '/search/'+searchVal.toString()
@@ -52,6 +52,28 @@ const Navbar = () => {
         setSearchVal("");
     }
 
+    const [admin, setAdmin] = useState(null);
+
+
+    const verfiyAdmin = async () => {
+        const response = await fetch(`http://localhost:8000/api/auth/getallitems`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('token')
+            }
+        });
+
+        const json = await response.json();
+        setAdmin(json.success);
+    }
+
+    useEffect(() => {
+        verfiyAdmin();
+        // len = Object.keys(itemDetails.description[0].para)[0].length;
+        // eslint-disable-next-line
+    }, [])
+    // console.log(admin);
 
     return (
         <div className='bg-util fixed top-0 right-0 left-0 z-30 '>
@@ -63,11 +85,13 @@ const Navbar = () => {
                         <div className="line h-0.5 w-3.5 bg-white my-0.5"></div>
                     </div>
                     <div>
-                        <Link className='italic font-bold text-white px-2 text-xl flex items-center mr-1 cursor-pointer' to="/">B2C</Link>
+                        <Link className='italic font-bold text-white px-2 text-xl flex items-center mr-1 cursor-pointer' to="/">
+                            BKB
+                        </Link>
                     </div>
                 </div>
                 <div className="logo flex w-1/2">
-                    <Link to="/" className='italic font-bold text-white px-2 text-xl items-center mr-1 cursor-pointer hidden md:flex'>B2C</Link>
+                    <Link to="/" className='italic font-bold text-white px-2 text-xl items-center mr-1 cursor-pointer hidden md:flex '>BKB</Link>
                     {/* <form action="/query" className='flex w-full' onSubmit={handleSubmit}> */}
                     <input type="text" name="search" id="search" placeholder='Search for products, brands and more' className='text-sm px-4 py-2 w-[90%] rounded-sm hidden md:block outline-none' onChange={onChange} value={searchVal} />
                     <Link to={`/search/${searchVal.toString()}`} onClick={handleSearch} className="hidden md:block">
@@ -82,6 +106,7 @@ const Navbar = () => {
                         <div className="hidden dropdown-content flex-col absolute z-10 text-black -translate-x-8 rounded-sm ">
                             <Link to="/account"><i className="far fa-user-circle"></i>My Profile</Link>
                             <Link to="/orders"><i className="fas fa-folder"></i>Orders</Link>
+                            <Link to="/contact" className='py-2'><FcBusinessContact className='mr-2 ml-2' />Contact Us</Link>
                             <Link to="/" onClick={loggedIn}><i className="fas fa-power-off"></i>Logout</Link>
                         </div>
                         <div>
@@ -100,12 +125,21 @@ const Navbar = () => {
                             {logged && <Link to={'/account'}><i className="fas fa-user-check mx-3"></i></Link>}
                             {!logged && <Link to={'/login'}><HiOutlineLogin className='mx-2 text-lg' /></Link>}
                         </div>
-                        <div className=' rounded-md mx-1'>
-                            <Link to='/login' className='bg-white  text-util font-bold border-[3px] border-[#7520f5] md:hidden flex rounded-md px-3 pr-4 items-center '><BiAddToQueue className='mx-1' />Sell</Link>
+                        <div className='flex rounded-md mx-1'>
+                            <Link to='/login' className='bg-white  text-util font-bold border-[3px] border-[#7520f5] md:hidden flex rounded-md px-3 pr-4 items-center text-sm py-1'><BiAddToQueue className='mx-1' />Sell</Link>
+                            {admin && <Link to='/admin' className='bg-white  text-util font-bold border-[3px] border-[#7520f5] md:hidden flex rounded-md px-3 pr-4 items-center text-sm py-1'>Admin</Link>}
+                            {admin!==null && admin==false && <Link to='/servicing' className='bg-white  text-util font-bold border-[3px] border-[#7520f5] md:hidden flex rounded-md px-3 pr-4 items-center text-sm py-1'>Servicing</Link>}
                         </div>
                     </span>
-                    <div className='border-[3px] border-gray-300 mx-1 rounded-md'>
-                        <Link to='/login' className='bg-white text-util font-bold border-[3px] border-[#7520f5] hidden md:flex rounded-md px-3 pr-4 items-center '><BiAddToQueue className='mx-1' />Sell</Link>
+                    <div className='border-[3px] hidden md:flex border-gray-300 mx-1 rounded-md'>
+                        <Link to='/login' className='bg-white text-util font-bold border-[3px] border-[#7520f5]  flex rounded-md px-3 pr-4 items-center '><BiAddToQueue className='mx-1' />Sell</Link>
+                    </div>
+                    <div className='border-[3px] hidden md:flex border-gray-300 mx-1 rounded-md'>
+                        {admin &&
+                            <Link to='/admin' className='bg-white text-util font-bold border-[3px] border-[#7520f5]  flex rounded-md px-3 pr-4 items-center '>Admin</Link>}
+
+                        {admin!==null && admin==false &&
+                            <Link to='/servicing' className='bg-white text-util font-bold border-[3px] border-[#7520f5]  flex rounded-md px-3 pr-4 items-center '>Servicing</Link>}
                     </div>
                 </div>
             </nav>
@@ -124,7 +158,7 @@ const Navbar = () => {
                 <div className="items flex flex-col py-2" onClick={onClick}>
                     <Link to="/account" className='py-2 '><i className="fas fa-user-tie mx-2"></i>My Profile</Link>
                     <Link to="/orders" className='py-2 '><i className="fas fa-folder mx-2"></i>My Orders</Link>
-                    <Link to="/contact" className='py-2 '><FcBusinessContact className='mr-2' />Contact Us</Link>
+                    <Link to="/contact" className='py-2 flex '><FcBusinessContact className='mr-2 mx-2' />Contact Us</Link>
                     <Link to="/" className='py-2' onClick={loggedIn}><i className="fas fa-power-off mx-2"></i>Logout</Link>
                 </div>
             </div>}

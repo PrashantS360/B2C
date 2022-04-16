@@ -34,9 +34,9 @@ const Product = () => {
         // console.log(json);
         for (let i=0;i<json.length;i++) {
             let item = json[i].itemCode;
-            console.log(item)
-            if (item === itemDetails.itemCode) {
-                console.log(item);
+            // console.log(item,iCode);
+            if (item === iCode) {
+                // console.log(item);
                 setFound(true);
             }
         }
@@ -74,6 +74,23 @@ const Product = () => {
         alert('Your Order Is Placed Successfully');
     }
 
+    const service = async () => {
+        let item = itemDetails;
+        console.log(item);
+        const response = await fetch(`http://localhost:8000/api/auth/service`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('token')
+            },
+            body: JSON.stringify({ itemCode: item.itemCode, title: item.title, imgLink: item.imgLink[0], price: item.price, owner: item.owner, delivered: false, used: item.used })
+        });
+        
+        const json = await response.json();
+        console.log(json);
+        alert('Your Item has been sent to your closest service center');
+    }
+
     useEffect(() => {
         getItem();
         getOrders();
@@ -85,8 +102,8 @@ const Product = () => {
                 <div className='my-0.5 sm:w-1/3 border-[1px] border-gray-300 p-4 flex  items-center justify-between flex-col min-h-[85vh] h-fit'>
                     <img src={itemDetails.imgLink[0]} className=' max-h-[70vh] w-auto' alt="" />
                     <div className='flex flex-col lg:flex-row justify-evenly w-full my-2 '>
-                        {!found && <Link to="/orders" className='w-full font-semibold py-3 rounded-sm px-3 text-white bg-[#ff9f00] flex items-center justify-center my-1' ><BsFillLightningFill className="mx-2" onClick={order} /><span >BUY NOW</span> </Link>}
-                        {found && <Link to="/orders" className='w-full font-semibold py-3 rounded-sm px-3 text-white bg-[#ff9f00] flex items-center justify-center my-1'><BsFillCartCheckFill className="mx-2" /><span>SERVICING</span> </Link>}
+                        {!found && <Link onClick={order} to="/orders" className='w-full font-semibold py-3 rounded-sm px-3 text-white bg-[#ff9f00] flex items-center justify-center my-1' ><BsFillLightningFill className="mx-2"  /><span >BUY NOW</span> </Link>}
+                        {found && <Link to="/servicing" onClick={service} className='w-full font-semibold py-3 rounded-sm px-3 text-white bg-[#ff9f00] flex items-center justify-center my-1'><BsFillCartCheckFill className="mx-2" /><span>SERVICING</span> </Link>}
                     </div>
                 </div>
                 <div className='sm:w-2/3'>

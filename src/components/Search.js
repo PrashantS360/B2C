@@ -22,7 +22,7 @@ const Search = () => {
     useEffect(() => {
         getItems();
         // eslint-disable-next-line
-    }, [])
+    }, [location.pathname])
     // console.log(catItems)
 
     return (

@@ -15,6 +15,8 @@ import Product from './components/Product';
 import Orders from './components/Orders';
 import Filter from './components/Filter';
 import Search from './components/Search';
+import Admin from './components/Admin';
+import Servicing from './components/Servicing';
 
 function App() {
   return (
@@ -47,6 +49,12 @@ function App() {
         </Route>
         <Route exact path="/contact">
           <Contact />
+        </Route>
+        <Route exact path="/admin">
+          <Admin />
+        </Route>
+        <Route exact path="/servicing">
+          <Servicing />
         </Route>
       </Switch>
       <Footer />
