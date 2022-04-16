@@ -1,7 +1,10 @@
 import React from 'react'
+import Rachit from '../assets/rachit.jpeg';
+import Rahul from '../assets/rahul.jpg';
+import Yogesh from '../assets/yogesh.jpeg';
+import Image4 from '../assets/img3.png';
+
 const Review = () => {
-
-
   return (
     <div><section className="text-gray-600 body-font">
     <div className="container px-5 py-24 mx-auto">
@@ -12,7 +15,7 @@ const Review = () => {
       <div className="flex flex-wrap -m-4">
         <div className="p-4 lg:w-1/2">
           <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-            <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://wikibio.in/wp-content/uploads/2018/12/Yash.png"/>
+            <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src={Rachit}/>
             <div className="flex-grow sm:pl-8">
               <h2 className="title-font font-medium text-lg text-gray-900">Holden Caulfield</h2>
               <h3 className="text-gray-500 mb-3">UI Developer</h3>
@@ -39,7 +42,7 @@ const Review = () => {
         </div>
         <div className="p-4 lg:w-1/2">
           <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-            <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://st3.depositphotos.com/1037987/15097/i/450/depositphotos_150975580-stock-photo-portrait-of-businesswoman-in-office.jpg"/>
+            <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src={Yogesh}/>
             <div className="flex-grow sm:pl-8">
               <h2 className="title-font font-medium text-lg text-gray-900">Alper Kamu</h2>
               <h3 className="text-gray-500 mb-3">Designer</h3>
@@ -66,7 +69,7 @@ const Review = () => {
         </div>
         <div className="p-4 lg:w-1/2">
           <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-            <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://st3.depositphotos.com/1037987/15097/i/450/depositphotos_150975580-stock-photo-portrait-of-businesswoman-in-office.jpg"/>
+            <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-top sm:mb-0 mb-4" src={Rahul}/>
             <div className="flex-grow sm:pl-8">
               <h2 className="title-font font-medium text-lg text-gray-900">Atticus Finch</h2>
               <h3 className="text-gray-500 mb-3">UI Developer</h3>
